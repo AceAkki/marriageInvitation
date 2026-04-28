@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import UseAnimationFrame from "./AnimeTest";
 import "./styles.css";
 
 const images = [
@@ -45,11 +46,12 @@ function ParallaxSection({ src, title }) {
       </motion.div>
 
       <div className="parallax-overlay" />
-
+      <UseAnimationFrame rotateValue={200} yValue={-50} />
       <motion.div className="parallax-content" style={{ opacity, y: yContent }}>
         <h2 className="parallax-title">{title}</h2>
         <p className="parallax-subtitle">A Photography Project</p>
       </motion.div>
+      <UseAnimationFrame rotateValue={300} yValue={-10} />
     </section>
   );
 }

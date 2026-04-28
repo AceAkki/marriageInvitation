@@ -10,21 +10,24 @@ import { useRef } from "react";
 
 function Image({ id }: { id: string }) {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  console.log(scrollYProgress);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], // Tracks from when section enters bottom to when it leaves top
+  });
   const y = useParallax(scrollYProgress, 300);
+  const yImage = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
   return (
     <section className="parallax-section">
-      <div ref={ref} className="parallax-bg">
-        <img src={id} loading="lazy" />
-      </div>
+      <motion.div ref={ref} className="parallax-bg" style={{ y: yImage }}>
+        <img src={id} alt={`Photography ${id}`} loading="lazy" />
+      </motion.div>
       <div className="parallax-overlay"></div>
       <div className="parallax-content">
         <motion.h2
           // Hide until scroll progress is measured
           className="impact parallax-title"
-          initial={{ visibility: "hidden" }}
-          animate={{ visibility: "visible" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           style={{ y }}
         >{`#00`}</motion.h2>
         <p className="parallax-subtitle">A Photography Project</p>
@@ -87,6 +90,8 @@ function StyleSheet() {
             display: flex;
             align-items: center;
             justify-content: center;
+            scroll-snap-align: start; /* Added this */
+    scroll-snap-stop: always;
         }
 
         .parallax-bg {
@@ -126,7 +131,7 @@ function StyleSheet() {
 
         .parallax-title {
             font-size: clamp(60px, 18vw, 200px);
-            color: var(--white);
+            color: white;
             text-transform: uppercase;
             text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
             margin: 0;

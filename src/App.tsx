@@ -13,10 +13,12 @@ function App() {
       <section>
         <ImageCircles />
       </section>
-
-      <ScrollTriggered />
-
-      <Para />
+      <section>
+        <ScrollTriggered />
+      </section>
+      <section>
+        <Para />
+      </section>
     </main>
   );
 }

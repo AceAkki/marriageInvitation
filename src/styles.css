@@ -53,7 +53,7 @@ body {
 }
 
 .parallax-title {
-  font-size: clamp(60px, 18vw, 200px);
+  font-size: clamp(60px, 18vw, 150px);
   color: var(--white);
   text-transform: uppercase;
   text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);

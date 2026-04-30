@@ -43,11 +43,26 @@
   text-align: center;
 }
 
+.gold-divide {
+  height: 1px;
+  width: 40%;
+  margin: 2rem auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #bf953f 20%,
+    #fcf6ba 50%,
+    #bf953f 80%,
+    transparent
+  );
+  border: none;
+}
+
 .parents-wrap {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin: 5rem 0.7rem 3rem;
+  margin: 5rem 1.5rem 3rem;
 }
 
 .parent-name {
@@ -61,6 +76,12 @@
 .couple-wrap {
   display: flex;
   flex-direction: column;
+  margin: 5rem 1.5rem 3rem;
+}
+
+.date-wrap {
+  font-family: "Cinzel Decorative";
+  font-weight: 900;
 }
 
 .name-title {

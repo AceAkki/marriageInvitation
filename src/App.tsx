@@ -31,6 +31,13 @@ function App() {
             <h3 className="name-sub-title gold-text">And</h3>
             <h1 className="name-title gold-text"> Divyani </h1>
           </div>
+
+          <hr className="gold-divide" />
+
+          <div className="date-wrap">
+            <p>Saturday, 27th June, 2026</p>
+            <p>12:30PM : 04:30PM</p>
+          </div>
         </div>
       </section>
       <section>

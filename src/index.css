@@ -5,8 +5,30 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("./assets/fonts/CinzelDecorative-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("./assets/fonts/CinzelDecorative-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: url("./assets/flowerBG.jpg") repeat fixed center / cover;
+  font-family: "Cinzel Decorative";
+  color: #f5f5dc;
 }
 
 main {

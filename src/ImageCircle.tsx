@@ -5,6 +5,26 @@ import "./ImageCircle.css";
 /*
 https://www.framer.com/marketplace/components/orbit-motion/
 */
+
+export const ImageCircles = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  useAnimationFrame((t) => {
+    if (!ref.current) return;
+    console.log(t);
+    const rotate = (t / 10000) * 300;
+    ref.current.style.transform = `rotate(${rotate}deg)`;
+  });
+  return (
+    <div className="main-wrapper">
+      <div className="card-wrapper" ref={ref}>
+        {[1, 2, 3, 4, 5].map((el) => {
+          return <ImageCircle index={el} />;
+        })}
+      </div>
+    </div>
+  );
+};
+
 export const ImageCircle = ({ index }: { index: number }) => {
   const refCard = useRef<HTMLDivElement>(null);
   useAnimationFrame((t) => {
@@ -41,24 +61,5 @@ export const ImageCircle = ({ index }: { index: number }) => {
         </div>
       </div>
     </motion.div>
-  );
-};
-
-export const ImageCircles = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  useAnimationFrame((t) => {
-    if (!ref.current) return;
-    console.log(t);
-    const rotate = (t / 10000) * 300;
-    ref.current.style.transform = `rotate(${rotate}deg)`;
-  });
-  return (
-    <div className="main-wrapper">
-      <div className="card-wrapper" ref={ref}>
-        {[1, 2, 3, 4, 5].map((el) => {
-          return <ImageCircle index={el} />;
-        })}
-      </div>
-    </div>
   );
 };

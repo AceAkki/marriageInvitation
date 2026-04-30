@@ -1,0 +1,19 @@
+.name-title {
+  font-family: "Feeling Passionate";
+  font-size: 5rem;
+}
+
+.gold-text {
+  background: linear-gradient(
+    to right,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: bold;
+}

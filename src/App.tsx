@@ -7,6 +7,9 @@ import Rotate from "./Test";
 function App() {
   return (
     <main>
+      <section style={{ background: "#DCAE96" }}>
+        <h1 className="name-title gold-text"> Akshay </h1>
+      </section>
       <section>
         <Rotate />
       </section>

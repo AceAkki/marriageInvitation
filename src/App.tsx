@@ -8,11 +8,14 @@ import GaneshaImg from "./assets/ganesha.png";
 import ArchBG from "./assets/rose-arc.png";
 import Frame from "./assets/frame.png";
 import FrameSquare from "./assets/frameSquare.png";
+import WeddingInvite from "./FloralGrowth";
 
 function App() {
   return (
     <main>
-      <section></section>
+      <section>
+        <WeddingInvite />
+      </section>
       <section>
         <div className="card-layout">
           <div className="ganesha-wrap">

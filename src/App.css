@@ -10,6 +10,10 @@
   height: 100px;
 }
 
+.flying-flower {
+  width: 80px;
+}
+
 .card-layout {
   /* background: radial-gradient(circle, #0a2e2a 0%, #021a2b 100%); */
   /* box-shadow:
@@ -145,5 +149,9 @@
   }
   .frame-content {
     width: 350px;
+  }
+
+  .flying-flower {
+    width: 150px;
   }
 }

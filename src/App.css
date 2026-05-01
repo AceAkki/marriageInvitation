@@ -27,7 +27,7 @@
   inset 0 0 0 2px #aa771c,
   0 10px 20px rgba(0, 0, 0, 0.5); */
 
-  border-radius: 50% 50% 1rem 1rem / 20% 20% 0 0;
+  border-radius: 5rem;
   border: 6px solid;
   border-image-source: linear-gradient(to bottom, #fcf6ba, #bf953f, #aa771c);
   border-image-slice: 1;
@@ -137,5 +137,13 @@
   .card-layout {
     border-radius: 50% 50% 1rem 1rem / 20% 20% 0 0;
     margin: 0 15%;
+  }
+
+  .frame {
+    width: 400px;
+    align-self: center;
+  }
+  .frame-content {
+    width: 350px;
   }
 }

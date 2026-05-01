@@ -5,6 +5,9 @@ import { ImageCircles } from "./ImageCircle";
 import Rotate from "./Test";
 
 import GaneshaImg from "./assets/ganesha.png";
+import ArchBG from "./assets/rose-arc.png";
+import Frame from "./assets/frame.png";
+import FrameSquare from "./assets/frameSquare.png";
 
 function App() {
   return (
@@ -30,13 +33,24 @@ function App() {
             <h1 className="name-title gold-text"> Akshay </h1>
             <h3 className="name-sub-title gold-text">And</h3>
             <h1 className="name-title gold-text"> Divyani </h1>
+            <img src={ArchBG} className="frame" alt="" />
           </div>
 
           <hr className="gold-divide" />
 
           <div className="date-wrap">
-            <p>Saturday, 27th June, 2026</p>
-            <p>12:30PM : 04:30PM</p>
+            <div className="frame-content">
+              <p>Saturday, 27th June, 2026</p>
+              <p>12:30PM : 04:30PM</p>
+
+              <br />
+              <strong>Central Railway Officers Hall</strong>
+              <p>
+                D/14, Dada Saheb Phalke Marg, Gautam Nagar, Dadar, Mumbai,
+                Maharashtra 400014
+              </p>
+            </div>
+            <img src={FrameSquare} className="frame" alt="" />
           </div>
         </div>
       </section>

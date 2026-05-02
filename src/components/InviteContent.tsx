@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import GaneshaImg from "../assets/ganesha.png";
 import ArchBG from "../assets/rose-arc.png";
 import FrameSquare from "../assets/frameSquare.png";
@@ -5,18 +6,28 @@ import FrameSquare from "../assets/frameSquare.png";
 const InviteContent = () => {
   return (
     <div className="card-layout">
-      <div className="ganesha-wrap">
+      <motion.div
+        className="ganesha-wrap"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2.9 }}
+      >
         <p className="gold-text">ॐ श्री गणेशाय नम</p>
         <img src={GaneshaImg} className="ganesha-img" />
-      </div>
-      <div className="parents-wrap">
+      </motion.div>
+      <motion.div
+        className="parents-wrap"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3 }}
+      >
         <h5 className="parent-name">Smt. Sonali & Shri Ramdas Patil </h5>
         <p>along with</p>
         <h5 className="parent-name">Smt. Rekha Sudhakar Bhadrige</h5>
         <p>
           together with their families ask you to join them for the wedding of
         </p>
-      </div>
+      </motion.div>
 
       <div className="couple-wrap">
         <h1 className="name-title gold-text"> Akshay </h1>

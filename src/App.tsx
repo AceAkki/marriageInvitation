@@ -10,10 +10,10 @@ import { cancelFrame, frame } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 import Frame from "./assets/frame.png";
-import WeddingInvite from "./FloralGrowth";
 
 import ProCountdown from "./Countdown";
 
+import IntroFlower from "./components/IntroFlower";
 import InviteContent from "./components/InviteContent";
 
 function App() {
@@ -35,13 +35,13 @@ function App() {
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
         <section>
-          <WeddingInvite />
+          <IntroFlower />
         </section>
-        <section>
+        <section style={{ paddingTop: "20vh" }}>
           <InviteContent />
         </section>
         <section>
-          <ProCountdown
+          {/* <ProCountdown
             targetDate={newDate}
             tint="#FFFFFF"
             labelColor="#888888"
@@ -50,7 +50,7 @@ function App() {
             showSeparators={false}
             fontFamily="Inter"
             fontWeight={700}
-          />
+          /> */}
           <Rotate />
         </section>
         <section>

@@ -53,7 +53,7 @@ function App() {
           /> */}
           <Rotate />
         </section>
-        <section>
+        {/* <section>
           <ImageCircles />
         </section>
         <section>
@@ -61,7 +61,7 @@ function App() {
         </section>
         <section>
           <Para />
-        </section>
+        </section> */}
       </main>
     </ReactLenis>
   );

@@ -12,13 +12,19 @@ import FlowerImg8 from "../assets/flower8.png";
 import leafImg from "../assets/leaf.png";
 
 // Individual Flower Component for easier positioning
-const FlyingFlower = ({ src, delay = 0, xPos = "10%", speed = -500 }) => {
+const FlyingFlower = ({
+  src,
+  delay = 0,
+  xPos = "10%",
+  speed = -500,
+  yOffset = 200,
+}) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const yRaw = useTransform(scrollYProgress, [0, 1], [200, speed]);
+  const yRaw = useTransform(scrollYProgress, [0, 1], [yOffset, speed]);
   // This creates the "Flying Up" effect by moving the Y position
   // much faster than the actual scroll speed
   const y = useSpring(yRaw, {
@@ -47,6 +53,47 @@ const FlyingFlower = ({ src, delay = 0, xPos = "10%", speed = -500 }) => {
   );
 };
 
+const SwayFlower = ({ src, xPos = "10%", speed = -500, yOffset = 0 }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // 1. Use a slightly higher damping for a "heavier," smoother feel
+  const yRaw = useTransform(scrollYProgress, [0, 1], [yOffset, speed]);
+  const y = useSpring(yRaw, { stiffness: 50, damping: 25, restDelta: 0.001 });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+
+  return (
+    <motion.img
+      ref={ref}
+      src={src}
+      // Use 'animate' for things that DON'T conflict with scroll 'y'
+      animate={{
+        x: [0, 10, 0], // Sway side-to-side instead of fighting the vertical scroll
+      }}
+      transition={{
+        duration: 4 + Math.random() * 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="flying-flower"
+      style={{
+        y, // Scroll-driven vertical movement
+        opacity,
+
+        position: "absolute",
+        left: xPos,
+        zIndex: 1,
+        pointerEvents: "none",
+        willChange: "transform", // CRITICAL: Tells the browser to use the GPU
+      }}
+    />
+  );
+};
+
 export default function IntroFlower() {
   return (
     <div>
@@ -54,13 +101,85 @@ export default function IntroFlower() {
 
       <section
         style={{
+          position: "relative",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "#fdfbf7",
           overflowX: "hidden",
+          height: "100vh",
         }}
       >
+        {/* --- EXISTING GROUPS (Top & Mid-Top) --- */}
+        <SwayFlower src={FlowerImg1} xPos="3%" speed={-800} yOffset={-150} />
+        <SwayFlower src={FlowerImg7} xPos="94%" speed={-1100} yOffset={-50} />
+        <SwayFlower src={leafImg} xPos="18%" speed={-1400} yOffset={100} />
+        <SwayFlower src={FlowerImg4} xPos="82%" speed={-950} yOffset={-250} />
+        <SwayFlower src={FlowerImg2} xPos="12%" speed={-1200} yOffset={400} />
+        <SwayFlower src={FlowerImg5} xPos="25%" speed={-1600} yOffset={250} />
+        <SwayFlower src={leafImg} xPos="70%" speed={-1000} yOffset={350} />
+        <SwayFlower src={FlowerImg8} xPos="88%" speed={-1300} yOffset={600} />
+
+        {/* --- NEW Group 5: The "Empty Middle" Fill (Center Viewport) --- */}
+        {/* These fill the void around the 400px - 600px vertical mark */}
+        <SwayFlower src={FlowerImg6} xPos="15%" speed={-1100} yOffset={550} />
+        <SwayFlower src={FlowerImg3} xPos="30%" speed={-1450} yOffset={480} />
+        <SwayFlower src={leafImg} xPos="55%" speed={-900} yOffset={520} />
+        <SwayFlower src={FlowerImg1} xPos="75%" speed={-1300} yOffset={580} />
+        <SwayFlower src={FlowerImg5} xPos="40%" speed={-1050} yOffset={650} />
+
+        {/* --- NEW Group 6: The "Bottom Depth" (Coming from way down) --- */}
+        {/* These ensure that as the user scrolls, new flowers keep appearing from the bottom */}
+        <SwayFlower src={FlowerImg7} xPos="10%" speed={-1600} yOffset={900} />
+        <SwayFlower src={FlowerImg2} xPos="22%" speed={-1200} yOffset={1100} />
+        <SwayFlower src={leafImg} xPos="45%" speed={-1800} yOffset={950} />
+        <SwayFlower src={FlowerImg8} xPos="60%" speed={-1350} yOffset={1200} />
+        <SwayFlower src={FlowerImg4} xPos="80%" speed={-1500} yOffset={1050} />
+        <SwayFlower src={FlowerImg1} xPos="92%" speed={-1100} yOffset={980} />
+
+        {/* Group 3 & 4 (Your previous center/low scatter) */}
+        <SwayFlower src={FlowerImg3} xPos="35%" speed={-1500} yOffset={-300} />
+        <SwayFlower src={leafImg} xPos="42%" speed={-850} yOffset={500} />
+        <SwayFlower src={FlowerImg6} xPos="58%" speed={-1700} yOffset={-100} />
+        <SwayFlower src={FlowerImg1} xPos="65%" speed={-1150} yOffset={450} />
+        <SwayFlower src={FlowerImg4} xPos="48%" speed={-1400} yOffset={800} />
+        <SwayFlower src={FlowerImg2} xPos="5%" speed={-900} yOffset={700} />
+        <SwayFlower src={leafImg} xPos="90%" speed={-1200} yOffset={850} />
+
+        <SwayFlower src={FlowerImg1} xPos="2%" speed={-1100} yOffset={1600} />
+        <SwayFlower src={leafImg} xPos="5%" speed={-1400} yOffset={1750} />
+        <SwayFlower src={FlowerImg4} xPos="8%" speed={-900} yOffset={1650} />
+        <SwayFlower src={FlowerImg2} xPos="12%" speed={-1250} yOffset={1900} />
+        <SwayFlower src={FlowerImg7} xPos="15%" speed={-1500} yOffset={1800} />
+
+        {/* Group B: Mid Left (Dense Cluster) */}
+        <SwayFlower src={FlowerImg5} xPos="22%" speed={-1000} yOffset={1700} />
+        <SwayFlower src={FlowerImg8} xPos="26%" speed={-1350} yOffset={1950} />
+        <SwayFlower src={leafImg} xPos="30%" speed={-1150} yOffset={1620} />
+        <SwayFlower src={FlowerImg3} xPos="34%" speed={-1600} yOffset={1850} />
+
+        {/* Group C: Center-Left (Dense Cluster) */}
+        <SwayFlower src={FlowerImg6} xPos="38%" speed={-900} yOffset={2000} />
+        <SwayFlower src={FlowerImg1} xPos="42%" speed={-1450} yOffset={2100} />
+        <SwayFlower src={leafImg} xPos="45%" speed={-1100} yOffset={1750} />
+        <SwayFlower src={FlowerImg5} xPos="49%" speed={-1300} yOffset={2250} />
+
+        {/* Group D: Center-Right (Dense Cluster) */}
+        <SwayFlower src={FlowerImg2} xPos="53%" speed={-1200} yOffset={1950} />
+        <SwayFlower src={FlowerImg8} xPos="57%" speed={-1550} yOffset={1800} />
+        <SwayFlower src={leafImg} xPos="62%" speed={-950} yOffset={2150} />
+        <SwayFlower src={FlowerImg4} xPos="66%" speed={-1400} yOffset={1650} />
+
+        {/* Group E: Mid Right (Dense Cluster) */}
+        <SwayFlower src={FlowerImg7} xPos="72%" speed={-1050} yOffset={2300} />
+        <SwayFlower src={FlowerImg1} xPos="76%" speed={-1300} yOffset={1900} />
+        <SwayFlower src={leafImg} xPos="80%" speed={-1500} yOffset={2050} />
+        <SwayFlower src={FlowerImg3} xPos="84%" speed={-1100} yOffset={1750} />
+
+        {/* Group F: Far Right (Dense Cluster) */}
+        <SwayFlower src={FlowerImg5} xPos="89%" speed={-1400} yOffset={2200} />
+        <SwayFlower src={FlowerImg2} xPos="93%" speed={-1000} yOffset={1850} />
+        <SwayFlower src={leafImg} xPos="97%" speed={-1250} yOffset={2100} />
         <h1 style={{ fontFamily: "serif", fontSize: "3rem" }}></h1>
       </section>
 

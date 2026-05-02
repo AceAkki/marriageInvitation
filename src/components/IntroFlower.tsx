@@ -107,7 +107,6 @@ export default function IntroFlower() {
           alignItems: "center",
           backgroundColor: "#fdfbf7",
           overflowX: "hidden",
-          height: "100vh",
         }}
       >
         {/* --- EXISTING GROUPS (Top & Mid-Top) --- */}
@@ -184,7 +183,7 @@ export default function IntroFlower() {
       </section>
 
       {/* Animation Section */}
-      <section
+      <div
         style={{
           position: "relative",
           display: "flex",
@@ -252,7 +251,7 @@ export default function IntroFlower() {
             <p style={{ letterSpacing: "3px" }}>ARE GETTING MARRIED</p>
           </motion.div>
         </div> */}
-      </section>
+      </div>
     </div>
   );
 }

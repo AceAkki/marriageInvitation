@@ -18,10 +18,14 @@ const FlyingFlower = ({ src, delay = 0, xPos = "10%", speed = -500 }) => {
     target: ref,
     offset: ["start end", "end start"],
   });
-
+  const yRaw = useTransform(scrollYProgress, [0, 1], [200, speed]);
   // This creates the "Flying Up" effect by moving the Y position
   // much faster than the actual scroll speed
-  const y = useTransform(scrollYProgress, [0, 1], [200, speed]);
+  const y = useSpring(yRaw, {
+    stiffness: 100, // Higher = faster/snappier
+    damping: 30, // Higher = less oscillation/bouncing
+    restDelta: 0.001,
+  });
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 45]); // Slight tilt as they rise
 
@@ -47,6 +51,7 @@ export default function IntroFlower() {
   return (
     <div>
       {/* Introduction Section */}
+
       <section
         style={{
           display: "flex",

@@ -44,8 +44,6 @@ const FlyingFlower = ({ src, delay = 0, xPos = "10%", speed = -500 }) => {
 };
 
 export default function WeddingInvite() {
-  const flowerImg = "https://www.svgrepo.com/show/475141/flower.svg"; // Placeholder SVG
-
   return (
     <div style={{ backgroundColor: "#fdfbf7", overflowX: "hidden" }}>
       {/* Introduction Section */}
@@ -72,30 +70,42 @@ export default function WeddingInvite() {
         }}
       >
         {/* --- Far Left Layer --- */}
-        <FlyingFlower src={FlowerImg} xPos="2%" speed={-750} />
-        <FlyingFlower src={FlowerImg3} xPos="8%" speed={-500} />
-        <FlyingFlower src={FlowerImg4} xPos="15%" speed={-980} />
-        <FlyingFlower src={FlowerImg6} xPos="22%" speed={-1100} /> {/* Added */}
+        <FlyingFlower src={FlowerImg} xPos="1%" speed={-750} />
+        <FlyingFlower src={FlowerImg3} xPos="4%" speed={-1150} />
+        <FlyingFlower src={FlowerImg2} xPos="7%" speed={-500} />
+        <FlyingFlower src={FlowerImg4} xPos="10%" speed={-980} />
+        <FlyingFlower src={FlowerImg6} xPos="13%" speed={-1100} />
+        <FlyingFlower src={FlowerImg5} xPos="17%" speed={-650} />
         {/* --- Mid Left Layer --- */}
-        <FlyingFlower src={FlowerImg2} xPos="28%" speed={-600} />
-        <FlyingFlower src={FlowerImg1} xPos="34%" speed={-400} />
-        <FlyingFlower src={FlowerImg5} xPos="39%" speed={-850} /> {/* Added */}
-        <FlyingFlower src={FlowerImg3} xPos="43%" speed={-900} />
-        {/* --- Center Layer (The "Focus" area) --- */}
-        <FlyingFlower src={leafImg} xPos="50%" speed={-990} />
-        <FlyingFlower src={FlowerImg8} xPos="54%" speed={-1300} />{" "}
-        {/* Added - Fast "foreground" flower */}
-        <FlyingFlower src={FlowerImg2} xPos="58%" speed={-450} />
+        <FlyingFlower src={leafImg} xPos="20%" speed={-850} />
+        <FlyingFlower src={FlowerImg7} xPos="23%" speed={-1300} />
+        <FlyingFlower src={FlowerImg2} xPos="27%" speed={-600} />
+        <FlyingFlower src={FlowerImg8} xPos="30%" speed={-950} />
+        <FlyingFlower src={FlowerImg1} xPos="33%" speed={-400} />
+        <FlyingFlower src={FlowerImg5} xPos="36%" speed={-1100} />
+        <FlyingFlower src={FlowerImg3} xPos="40%" speed={-900} />
+        {/* --- Center Layer --- */}
+        <FlyingFlower src={FlowerImg4} xPos="44%" speed={-720} />
+        <FlyingFlower src={FlowerImg7} xPos="47%" speed={-1400} />
+        <FlyingFlower src={FlowerImg6} xPos="51%" speed={-990} />
+        <FlyingFlower src={FlowerImg8} xPos="54%" speed={-1300} />
+        <FlyingFlower src={FlowerImg2} xPos="57%" speed={-450} />
+        <FlyingFlower src={FlowerImg5} xPos="60%" speed={-1050} />
         {/* --- Mid Right Layer --- */}
-        <FlyingFlower src={FlowerImg4} xPos="64%" speed={-680} />
+        <FlyingFlower src={leafImg} xPos="63%" speed={-1200} />{" "}
+        {/* Moved leaf here */}
+        <FlyingFlower src={FlowerImg4} xPos="66%" speed={-680} />
         <FlyingFlower src={FlowerImg} xPos="70%" speed={-550} />
-        <FlyingFlower src={FlowerImg7} xPos="76%" speed={-1050} /> {/* Added */}
-        <FlyingFlower src={FlowerImg5} xPos="82%" speed={-900} />
+        <FlyingFlower src={FlowerImg1} xPos="74%" speed={-880} />
+        <FlyingFlower src={FlowerImg7} xPos="77%" speed={-1050} />
+        <FlyingFlower src={FlowerImg3} xPos="81%" speed={-1250} />
         {/* --- Far Right Layer --- */}
-        <FlyingFlower src={FlowerImg1} xPos="88%" speed={-1200} />
-        <FlyingFlower src={FlowerImg6} xPos="92%" speed={-990} />
-        <FlyingFlower src={FlowerImg3} xPos="96%" speed={-800} /> {/* Added */}
-        <FlyingFlower src={FlowerImg8} xPos="98%" speed={-1150} />
+        <FlyingFlower src={FlowerImg5} xPos="84%" speed={-900} />
+        <FlyingFlower src={FlowerImg4} xPos="87%" speed={-750} />
+        <FlyingFlower src={FlowerImg1} xPos="90%" speed={-1200} />
+        <FlyingFlower src={FlowerImg6} xPos="93%" speed={-990} />
+        <FlyingFlower src={FlowerImg3} xPos="96%" speed={-800} />
+        <FlyingFlower src={FlowerImg8} xPos="99%" speed={-1150} />
         {/* <div style={{ marginTop: "40vh", textAlign: "center", zIndex: 10 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

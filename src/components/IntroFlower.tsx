@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import FlowerImg from "../assets/flower.png";
 import FlowerImg1 from "../assets/flower1.png";

@@ -138,7 +138,7 @@ export default function IntroFlower() {
 
         {/* Group 3 & 4 (Your previous center/low scatter) */}
         <SwayFlower src={FlowerImg3} xPos="35%" speed={-1500} yOffset={-300} />
-        <SwayFlower src={leafImg} xPos="42%" speed={-850} yOffset={500} />
+        <SwayFlower src={FlowerImg8} xPos="42%" speed={-850} yOffset={500} />
         <SwayFlower src={FlowerImg6} xPos="58%" speed={-1700} yOffset={-100} />
         <SwayFlower src={FlowerImg1} xPos="65%" speed={-1150} yOffset={450} />
         <SwayFlower src={FlowerImg4} xPos="48%" speed={-1400} yOffset={800} />
@@ -154,7 +154,7 @@ export default function IntroFlower() {
         {/* Group B: Mid Left (Dense Cluster) */}
         <SwayFlower src={FlowerImg5} xPos="22%" speed={-1000} yOffset={1700} />
         <SwayFlower src={FlowerImg8} xPos="26%" speed={-1350} yOffset={1950} />
-        <SwayFlower src={leafImg} xPos="30%" speed={-1150} yOffset={1620} />
+        <SwayFlower src={FlowerImg6} xPos="30%" speed={-1150} yOffset={1620} />
         <SwayFlower src={FlowerImg3} xPos="34%" speed={-1600} yOffset={1850} />
 
         {/* Group C: Center-Left (Dense Cluster) */}

@@ -86,7 +86,7 @@ const SwayFlower = ({ src, xPos = "10%", speed = -500, yOffset = 0 }) => {
 
         position: "absolute",
         left: xPos,
-        zIndex: 1,
+        zIndex: 5,
         pointerEvents: "none",
         willChange: "transform", // CRITICAL: Tells the browser to use the GPU
       }}
@@ -105,7 +105,7 @@ export default function IntroFlower() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#fdfbf7",
+
           overflowX: "hidden",
         }}
       >
@@ -175,33 +175,7 @@ export default function IntroFlower() {
         <SwayFlower src={leafImg} xPos="80%" speed={-1500} yOffset={2050} />
         <SwayFlower src={FlowerImg3} xPos="84%" speed={-1100} yOffset={1750} />
 
-        {/* Group F: Far Right (Dense Cluster) */}
-        <SwayFlower src={FlowerImg5} xPos="89%" speed={-1400} />
-        <SwayFlower src={FlowerImg2} xPos="93%" speed={-1000} />
-        <SwayFlower src={leafImg} xPos="97%" speed={-1250} />
-
-        <SwayFlower src={FlowerImg6} xPos="38%" speed={-900} />
-        <SwayFlower src={FlowerImg1} xPos="42%" speed={-1450} />
-        <SwayFlower src={leafImg} xPos="45%" speed={-1100} />
-        <SwayFlower src={FlowerImg5} xPos="49%" speed={-1300} />
-
-        {/* Group D: Center-Right (Dense Cluster) */}
-        <SwayFlower src={FlowerImg2} xPos="53%" speed={-1200} />
-        <SwayFlower src={FlowerImg8} xPos="57%" speed={-1550} />
-        <SwayFlower src={leafImg} xPos="62%" speed={-950} />
-        <SwayFlower src={FlowerImg4} xPos="66%" speed={-1400} />
-
-        {/* Group E: Mid Right (Dense Cluster) */}
-        <SwayFlower src={FlowerImg7} xPos="72%" speed={-1050} />
-        <SwayFlower src={FlowerImg1} xPos="76%" speed={-1300} />
-        <SwayFlower src={leafImg} xPos="80%" speed={-1500} />
-        <SwayFlower src={FlowerImg3} xPos="84%" speed={-1100} />
-
-        {/* Group F: Far Right (Dense Cluster) */}
-        <SwayFlower src={FlowerImg5} xPos="89%" speed={-1400} />
-        <SwayFlower src={FlowerImg2} xPos="93%" speed={-1000} />
-        <SwayFlower src={leafImg} xPos="97%" speed={-1250} />
-        <h1 style={{ fontFamily: "serif", fontSize: "3rem" }}></h1>
+        <h1 style={{ fontFamily: "serif", fontSize: "3rem" }}>Welcome</h1>
       </section>
 
       {/* Animation Section */}

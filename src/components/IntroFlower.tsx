@@ -175,7 +175,7 @@ export default function IntroFlower() {
         <SwayFlower src={leafImg} xPos="80%" speed={-1500} yOffset={2050} />
         <SwayFlower src={FlowerImg3} xPos="84%" speed={-1100} yOffset={1750} />
 
-        <h1 style={{ fontFamily: "serif", fontSize: "3rem" }}>Welcome</h1>
+        <TiltRiseHeading text="text wkkd wkwk wekwkekw wkwke" />
       </section>
 
       {/* Animation Section */}
@@ -251,3 +251,70 @@ export default function IntroFlower() {
     </div>
   );
 }
+
+const TiltRiseHeading = ({ text }) => {
+  const words = text.split(" ");
+
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    // Initial state: Fully visible, but sitting lower and tilted
+    hidden: (index) => ({
+      opacity: 1,
+      y: 100, // Starts 100px below its final spot
+      x: 30, // Side offset for the sweep
+      rotateZ: index % 2 === 0 ? 10 : -10, // Tilt from Effect 14
+    }),
+    // Animate state: Moves up and straightens out
+    show: {
+      y: 0,
+      x: 0,
+      rotateZ: 0,
+      transition: {
+        type: "spring",
+        damping: 15,
+        stiffness: 80,
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      style={{
+        display: "flex",
+        gap: "0.25em",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        // Ensure the parent doesn't clip the text while it's "below"
+        paddingBottom: "100px",
+      }}
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          custom={i}
+          variants={item}
+          style={{
+            display: "inline-block",
+            fontFamily: "serif",
+            fontSize: "4rem",
+            fontWeight: "bold",
+            color: "#111",
+          }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+};

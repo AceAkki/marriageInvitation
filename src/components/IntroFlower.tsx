@@ -178,6 +178,7 @@ export default function IntroFlower() {
         <SwayFlower src={FlowerImg3} xPos="84%" speed={-1100} yOffset={1750} />
 
         {/* <TiltRiseHeading text="text wkkd wkwk wekwkekw wkwke" /> */}
+
         <RoyalWeddingReveal />
       </section>
 

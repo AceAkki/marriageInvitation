@@ -51,7 +51,6 @@ function App() {
             fontFamily="Inter"
             fontWeight={700}
           /> */}
-          <Rotate />
         </section>
         {/* <section>
           <ImageCircles />

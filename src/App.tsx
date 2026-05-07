@@ -13,7 +13,7 @@ import Frame from "./assets/frame.png";
 
 import ProCountdown from "./Countdown";
 
-import IntroFlower from "./components/IntroFlower";
+import ResponsiveWeddingScene from "./components/IntroFlower";
 import InviteContent from "./components/InviteContent";
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
         <section>
-          <IntroFlower />
+          <ResponsiveWeddingScene />
         </section>
         <section style={{ paddingTop: "20vh" }}>
           <InviteContent />

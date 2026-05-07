@@ -83,17 +83,18 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     gap: "20px",
-    fontSize: "15rem",
   },
   textGroup: {
     padding: "0 40px",
   },
   name: {
-    fontSize: "4rem",
+    fontSize: "7rem",
     margin: "10px 0",
     letterSpacing: "4px",
     textTransform: "uppercase",
     fontWeight: "300",
+    position: "relative",
+    zIndex: 5,
   },
   ampersand: {
     fontSize: "1.5rem",

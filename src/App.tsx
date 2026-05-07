@@ -1,13 +1,12 @@
+import { useEffect, useRef } from "react";
+import { ReactLenis } from "lenis/react";
+import type { LenisRef } from "lenis/react";
+import { cancelFrame, frame } from "framer-motion";
 import "./App.css";
 import Para from "./Para";
 import ScrollTriggered from "./Scroll";
 import { ImageCircles } from "./ImageCircle";
 import Rotate from "./Test";
-
-import { ReactLenis } from "lenis/react";
-import type { LenisRef } from "lenis/react";
-import { cancelFrame, frame } from "framer-motion";
-import { useEffect, useRef } from "react";
 
 import Frame from "./assets/frame.png";
 

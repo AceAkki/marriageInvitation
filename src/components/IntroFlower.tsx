@@ -11,6 +11,8 @@ import FlowerImg7 from "../assets/flower7.png";
 import FlowerImg8 from "../assets/flower8.png";
 import leafImg from "../assets/leaf.png";
 
+import RoyalWeddingReveal from "./TitleReveal";
+
 // Individual Flower Component for easier positioning
 const FlyingFlower = ({
   src,
@@ -175,7 +177,8 @@ export default function IntroFlower() {
         <SwayFlower src={leafImg} xPos="80%" speed={-1500} yOffset={2050} />
         <SwayFlower src={FlowerImg3} xPos="84%" speed={-1100} yOffset={1750} />
 
-        <TiltRiseHeading text="text wkkd wkwk wekwkekw wkwke" />
+        {/* <TiltRiseHeading text="text wkkd wkwk wekwkekw wkwke" /> */}
+        <RoyalWeddingReveal />
       </section>
 
       {/* Animation Section */}

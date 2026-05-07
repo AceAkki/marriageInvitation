@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import "./titleReveal.css";
 
 const RoyalWeddingReveal = () => {
   // Animation Variants
@@ -36,83 +37,39 @@ const RoyalWeddingReveal = () => {
   };
 
   return (
-    <div style={styles.wrapper}>
+    <div className="title-wrapper ">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        style={styles.container}
+        className="title-container"
       >
         {/* Top Decorative Line */}
-        <motion.div variants={lineVariants} style={styles.line} />
+        <motion.div variants={lineVariants} className="title-line gold-bg" />
 
-        <div style={styles.textGroup}>
-          <motion.h1 variants={itemVariants} style={styles.name}>
+        <div className="text-group gold-text">
+          <motion.h1 variants={itemVariants} className="title-name">
             Akshay
           </motion.h1>
 
-          <motion.span variants={itemVariants} style={styles.ampersand}>
+          <motion.span variants={itemVariants} className="title-ampersand ">
             Weds
           </motion.span>
 
-          <motion.h1 variants={itemVariants} style={styles.name}>
+          <motion.h1 variants={itemVariants} className="title-name">
             Divyani
           </motion.h1>
         </div>
 
         {/* Bottom Decorative Line */}
-        <motion.div variants={lineVariants} style={styles.line} />
+        <motion.div variants={lineVariants} className="title-line gold-bg" />
+
+        {/* <motion.p variants={itemVariants} style={styles.subtext}>
+          SAVE THE DATE
+        </motion.p> */}
       </motion.div>
     </div>
   );
-};
-
-const styles = {
-  wrapper: {
-    height: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    // backgroundColor: "#0f172a", // Deep navy/regal background
-    color: "#d4af37", // Classic Gold
-    // fontFamily: "'Playfair Display', serif", // Ensure you import a Serif font
-  },
-  container: {
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: "20px",
-  },
-  textGroup: {
-    padding: "0 40px",
-  },
-  name: {
-    fontSize: "7rem",
-    margin: "10px 0",
-    letterSpacing: "4px",
-    textTransform: "uppercase",
-    fontWeight: "300",
-    position: "relative",
-    zIndex: 5,
-  },
-  ampersand: {
-    fontSize: "1.5rem",
-    fontStyle: "italic",
-    display: "block",
-    opacity: 0.8,
-    fontFamily: "Georgia, serif",
-  },
-  line: {
-    height: "1px",
-    backgroundColor: "#d4af37",
-    opacity: 0.5,
-  },
-  subtext: {
-    fontSize: "1rem",
-    letterSpacing: "8px",
-    marginTop: "10px",
-  },
 };
 
 export default RoyalWeddingReveal;

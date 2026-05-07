@@ -231,10 +231,10 @@ export default function IntroFlower() {
         <FlyingFlower src={FlowerImg1} xPos="83.5%" speed={-880} />
         <FlyingFlower src={FlowerImg7} xPos="86%" speed={-1050} />
         <FlyingFlower src={FlowerImg3} xPos="88.5%" speed={-1250} />
-        <FlyingFlower src={FlowerImg5} xPos="91%" speed={-900} />
-        <FlyingFlower src={FlowerImg4} xPos="93.5%" speed={-750} />
+        <FlyingFlower src={FlowerImg5} xPos="80%" speed={-900} />
+        {/* <FlyingFlower src={FlowerImg4} xPos="93.5%" speed={-750} />
         <FlyingFlower src={FlowerImg1} xPos="96%" speed={-1200} />
-        <FlyingFlower src={FlowerImg6} xPos="98.5%" speed={-990} />
+        <FlyingFlower src={FlowerImg6} xPos="98.5%" speed={-990} /> */}
         {/* <div style={{ marginTop: "40vh", textAlign: "center", zIndex: 10 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

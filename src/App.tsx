@@ -40,8 +40,7 @@ function App() {
         <section style={{ paddingTop: "20vh" }}>
           <InviteContent />
         </section>
-        <section>
-          {/* <ProCountdown
+        {/* <ProCountdown
             targetDate={newDate}
             tint="#FFFFFF"
             labelColor="#888888"
@@ -51,7 +50,7 @@ function App() {
             fontFamily="Inter"
             fontWeight={700}
           /> */}
-        </section>
+
         {/* <section>
           <ImageCircles />
         </section>

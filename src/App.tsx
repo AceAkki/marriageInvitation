@@ -3,15 +3,15 @@ import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import "./App.css";
-import Para from "./Para";
-import ScrollTriggered from "./Scroll";
-import { ImageCircles } from "./ImageCircle";
-import Rotate from "./Test";
+import Para from "./test/Para";
+import ScrollTriggered from "./test/Scroll";
+import { ImageCircles } from "./test/ImageCircle";
+import Rotate from "./test/Test";
 
 import Frame from "./assets/frame.png";
 
-import ResponsiveWeddingScene from "./components/IntroFlower";
-import InviteContent from "./components/InviteContent";
+import ResponsiveWeddingScene from "./features/introSection/IntroFlower";
+import InviteContent from "./features/mainSection/InviteContent";
 
 function App() {
   const lenisRef = useRef<LenisRef>(null);

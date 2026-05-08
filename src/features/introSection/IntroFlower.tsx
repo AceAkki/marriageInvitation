@@ -1,5 +1,8 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
+import RoyalWeddingReveal from "./TitleReveal";
+import useResponsiveValues from "../../hooks/useResponsiveValues";
+import { FlyingFlower, SwayFlower } from "./useFlowerAnimation";
+
 import FlowerImg from "../assets/flower.png";
 import FlowerImg1 from "../assets/flower1.png";
 import FlowerImg2 from "../assets/flower2.png";
@@ -11,100 +14,12 @@ import FlowerImg7 from "../assets/flower7.png";
 import FlowerImg8 from "../assets/flower8.png";
 import leafImg from "../assets/leaf.png";
 
-import RoyalWeddingReveal from "./TitleReveal";
-import useResponsiveValues from "../hooks/useResponsiveValues";
-
-// Individual Flower Component for easier positioning
-const FlyingFlower = ({
-  src,
-  delay = 0,
-  xPos = "10%",
-  speed = -500,
-  yOffset = 200,
-}) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const yRaw = useTransform(scrollYProgress, [0, 1], [yOffset, speed]);
-  // This creates the "Flying Up" effect by moving the Y position
-  // much faster than the actual scroll speed
-  const y = useSpring(yRaw, {
-    stiffness: 100, // Higher = faster/snappier
-    damping: 30, // Higher = less oscillation/bouncing
-    restDelta: 0.001,
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 45]); // Slight tilt as they rise
-
-  return (
-    <motion.img
-      ref={ref}
-      src={src}
-      className="flying-flower"
-      style={{
-        y,
-        opacity,
-        rotate,
-        position: "absolute",
-        left: xPos,
-        zIndex: 1,
-        pointerEvents: "none", // Ensures they don't block clicks
-      }}
-    />
-  );
-};
-
-const SwayFlower = ({ src, xPos = "10%", speed = -500, yOffset = 0 }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  // 1. Use a slightly higher damping for a "heavier," smoother feel
-  const yRaw = useTransform(scrollYProgress, [0, 1], [yOffset, speed]);
-  const y = useSpring(yRaw, { stiffness: 50, damping: 25, restDelta: 0.001 });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
-
-  return (
-    <motion.img
-      ref={ref}
-      src={src}
-      // Use 'animate' for things that DON'T conflict with scroll 'y'
-      animate={{
-        x: [0, 10, 0], // Sway side-to-side instead of fighting the vertical scroll
-      }}
-      transition={{
-        duration: 4 + Math.random() * 2,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-      className="flying-flower"
-      style={{
-        y, // Scroll-driven vertical movement
-        opacity,
-
-        position: "absolute",
-        left: xPos,
-        zIndex: 5,
-        pointerEvents: "none",
-        willChange: "transform", // CRITICAL: Tells the browser to use the GPU
-      }}
-    />
-  );
-};
-
 export default function IntroFlower() {
   const { width, height } = useResponsiveValues();
   let isMobile = width < 1080;
   let isDesktop = width > 1080;
   return (
     <div>
-      {/* Introduction Section */}
-
       <section
         style={{
           position: "relative",
@@ -235,8 +150,6 @@ export default function IntroFlower() {
 
         <RoyalWeddingReveal />
       </section>
-
-      {/* Animation Section */}
       <div
         style={{
           position: "relative",
@@ -314,7 +227,7 @@ export default function IntroFlower() {
   );
 }
 
-const TiltRiseHeading = ({ text }) => {
+const TiltRiseHeading = ({ text }: { text: string }) => {
   const words = text.split(" ");
 
   const container = {
@@ -327,7 +240,7 @@ const TiltRiseHeading = ({ text }) => {
 
   const item = {
     // Initial state: Fully visible, but sitting lower and tilted
-    hidden: (index) => ({
+    hidden: (index: number) => ({
       opacity: 1,
       y: 100, // Starts 100px below its final spot
       x: 30, // Side offset for the sweep

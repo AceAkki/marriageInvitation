@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import GaneshaImg from "../assets/ganesha.png";
 import ArchBG from "../assets/rose-arc.png";
 import FrameSquare from "../assets/frameSquare.png";
-import ProCountdown from "./Countdown";
-import useResponsiveValues from "../hooks/useResponsiveValues";
+import ProCountdown from "../introSection/Countdown";
+import useResponsiveValues from "../../hooks/useResponsiveValues";
 
 const InviteContent = () => {
   const { width, height } = useResponsiveValues();

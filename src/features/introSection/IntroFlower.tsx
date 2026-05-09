@@ -1,18 +1,17 @@
-import { motion } from "framer-motion";
 import RoyalWeddingReveal from "./TitleReveal";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
 import { FlyingFlower, SwayFlower } from "./useFlowerAnimation";
 
-import FlowerImg from "../assets/flower.png";
-import FlowerImg1 from "../assets/flower1.png";
-import FlowerImg2 from "../assets/flower2.png";
-import FlowerImg3 from "../assets/flower3.png";
-import FlowerImg4 from "../assets/flower4.png";
-import FlowerImg5 from "../assets/flower5.png";
-import FlowerImg6 from "../assets/flower6.png";
-import FlowerImg7 from "../assets/flower7.png";
-import FlowerImg8 from "../assets/flower8.png";
-import leafImg from "../assets/leaf.png";
+import FlowerImg from "../../assets/flower.png";
+import FlowerImg1 from "../../assets/flower1.png";
+import FlowerImg2 from "../../assets/flower2.png";
+import FlowerImg3 from "../../assets/flower3.png";
+import FlowerImg4 from "../../assets/flower4.png";
+import FlowerImg5 from "../../assets/flower5.png";
+import FlowerImg6 from "../../assets/flower6.png";
+import FlowerImg7 from "../../assets/flower7.png";
+import FlowerImg8 from "../../assets/flower8.png";
+import leafImg from "../../assets/leaf.png";
 
 export default function IntroFlower() {
   const { width, height } = useResponsiveValues();
@@ -146,8 +145,6 @@ export default function IntroFlower() {
         <SwayFlower src={leafImg} xPos="80%" speed={-1500} yOffset={2050} />
         <SwayFlower src={FlowerImg3} xPos="84%" speed={-1100} yOffset={1750} />
 
-        {/* <TiltRiseHeading text="text wkkd wkwk wekwkekw wkwke" /> */}
-
         <RoyalWeddingReveal />
       </section>
       <div
@@ -226,70 +223,3 @@ export default function IntroFlower() {
     </div>
   );
 }
-
-const TiltRiseHeading = ({ text }: { text: string }) => {
-  const words = text.split(" ");
-
-  const container = {
-    show: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const item = {
-    // Initial state: Fully visible, but sitting lower and tilted
-    hidden: (index: number) => ({
-      opacity: 1,
-      y: 100, // Starts 100px below its final spot
-      x: 30, // Side offset for the sweep
-      rotateZ: index % 2 === 0 ? 10 : -10, // Tilt from Effect 14
-    }),
-    // Animate state: Moves up and straightens out
-    show: {
-      y: 0,
-      x: 0,
-      rotateZ: 0,
-      transition: {
-        type: "spring",
-        damping: 15,
-        stiffness: 80,
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      style={{
-        display: "flex",
-        gap: "0.25em",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        // Ensure the parent doesn't clip the text while it's "below"
-        paddingBottom: "100px",
-      }}
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-    >
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          custom={i}
-          variants={item}
-          style={{
-            display: "inline-block",
-            fontFamily: "serif",
-            fontSize: "4rem",
-            fontWeight: "bold",
-            color: "#111",
-          }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.div>
-  );
-};

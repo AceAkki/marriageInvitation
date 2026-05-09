@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import GaneshaImg from "../assets/ganesha.png";
-import ArchBG from "../assets/rose-arc.png";
-import FrameSquare from "../assets/frameSquare.png";
+import GaneshaImg from "../../assets/ganesha.png";
+import ArchBG from "../../assets/rose-arc.png";
+import FrameSquare from "../../assets/frameSquare.png";
 import ProCountdown from "../introSection/Countdown";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
 
 const InviteContent = () => {
-  const { width, height } = useResponsiveValues();
+  const { width } = useResponsiveValues();
   let isMobile = width < 1080;
-  let isDesktop = width > 1080;
+  // let isDesktop = width > 1080;
   let newDate = new Date("2026-06-27");
   return (
     <div className="card-layout">

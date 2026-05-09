@@ -1,6 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "./titleReveal.css";
+import { motion, type Variants } from "framer-motion";
+import "./css/titleReveal.css";
 
 const RoyalWeddingReveal = () => {
   // Animation Variants
@@ -15,7 +14,7 @@ const RoyalWeddingReveal = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0, filter: "blur(10px)" },
     visible: {
       y: 0,
@@ -28,7 +27,7 @@ const RoyalWeddingReveal = () => {
     },
   };
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { width: 0 },
     visible: {
       width: "100%",

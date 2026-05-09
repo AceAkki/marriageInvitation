@@ -2,10 +2,11 @@ import { useEffect, useRef } from "react";
 import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
-import "./App.css";
 
 import ResponsiveWeddingScene from "./features/introSection/IntroFlower";
 import InviteContent from "./features/mainSection/InviteContent";
+
+import "./App.css";
 
 function App() {
   const lenisRef = useRef<LenisRef>(null);
@@ -15,9 +16,7 @@ function App() {
       const time = data.timestamp;
       lenisRef.current?.lenis?.raf(time);
     }
-
     frame.update(update, true);
-
     return () => cancelFrame(update);
   }, []);
 

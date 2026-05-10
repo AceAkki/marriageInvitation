@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import GaneshaImg from "../../assets/ganesha.png";
-import ArchBG from "../../assets/rose-arc.png";
+// import ArchBG from "../../assets/rose-arc.png";
 import FrameSquare from "../../assets/frameSquare.png";
 import ProCountdown from "../introSection/Countdown";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
+import CoupleWrap from "../introSection/CoupleWrap";
 
 const InviteContent = () => {
   const { width } = useResponsiveValues();
@@ -35,12 +36,13 @@ const InviteContent = () => {
         </p>
       </motion.div>
 
-      <div className="couple-wrap">
+      <CoupleWrap />
+      {/* <div className="couple-wrap">
         <h1 className="name-title gold-text"> Akshay </h1>
         <h3 className="name-sub-title gold-text">And</h3>
         <h1 className="name-title gold-text"> Divyani </h1>
         <img src={ArchBG} className="frame" alt="" />
-      </div>
+      </div> */}
 
       <hr className="gold-divide" />
 

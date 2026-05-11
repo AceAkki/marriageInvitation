@@ -3,7 +3,7 @@ import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 
-import ResponsiveWeddingScene from "./features/introSection/IntroFlower";
+import IntroFlowers from "./features/introSection/IntroFlowers";
 import InviteContent from "./features/mainSection/InviteContent";
 
 import "./App.css";
@@ -24,7 +24,7 @@ function App() {
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
         <section>
-          <ResponsiveWeddingScene />
+          <IntroFlowers />
         </section>
         <section style={{ paddingTop: "20vh" }}>
           <InviteContent />

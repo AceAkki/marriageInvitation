@@ -11,9 +11,10 @@ import FlowerImg5 from "../../assets/flower5.png";
 import FlowerImg6 from "../../assets/flower6.png";
 import FlowerImg7 from "../../assets/flower7.png";
 import FlowerImg8 from "../../assets/flower8.png";
+import FlowerImg9 from "../../assets/flower9.png";
 import leafImg from "../../assets/leaf.png";
 
-export default function IntroFlower() {
+export default function IntroFlowers() {
   const { width, height } = useResponsiveValues();
   let isMobile = width < 1080;
   let isDesktop = width > 1080;
@@ -162,7 +163,7 @@ export default function IntroFlower() {
         <FlyingFlower src={FlowerImg2} xPos="11%" speed={-500} />
         <FlyingFlower src={FlowerImg8} xPos="13.5%" speed={-1100} />
         <FlyingFlower src={FlowerImg4} xPos="16%" speed={-980} />
-        <FlyingFlower src={FlowerImg1} xPos="18.5%" speed={-600} />
+        <FlyingFlower src={FlowerImg9} xPos="18.5%" speed={-600} />
 
         {/* --- Section 2: Mid Left (21% - 40%) --- */}
         <FlyingFlower src={leafImg} xPos="21%" speed={-850} />
@@ -179,7 +180,7 @@ export default function IntroFlower() {
         <FlyingFlower src={FlowerImg5} xPos="43.5%" speed={-1150} />
         <FlyingFlower src={FlowerImg1} xPos="46%" speed={-400} />
         <FlyingFlower src={FlowerImg3} xPos="48.5%" speed={-1300} />
-        <FlyingFlower src={FlowerImg5} xPos="51%" speed={-1100} />
+        <FlyingFlower src={FlowerImg9} xPos="51%" speed={-1100} />
         <FlyingFlower src={FlowerImg2} xPos="53.5%" speed={-820} />
         <FlyingFlower src={FlowerImg3} xPos="56%" speed={-900} />
         <FlyingFlower src={FlowerImg4} xPos="58.5%" speed={-720} />
@@ -207,18 +208,6 @@ export default function IntroFlower() {
         {/* <FlyingFlower src={FlowerImg4} xPos="93.5%" speed={-750} />
         <FlyingFlower src={FlowerImg1} xPos="96%" speed={-1200} />
         <FlyingFlower src={FlowerImg6} xPos="98.5%" speed={-990} /> */}
-        {/* <div style={{ marginTop: "40vh", textAlign: "center", zIndex: 10 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5 }}
-          >
-            <h2 style={{ fontFamily: "serif", fontSize: "4rem" }}>
-              Sarah & James
-            </h2>
-            <p style={{ letterSpacing: "3px" }}>ARE GETTING MARRIED</p>
-          </motion.div>
-        </div> */}
       </div>
     </div>
   );

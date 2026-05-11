@@ -44,14 +44,41 @@ const InviteContent = () => {
         <img src={ArchBG} className="frame" alt="" />
       </div> */}
 
-      <hr className="gold-divide" />
+      <motion.hr
+        className="gold-divide"
+        initial={{ width: 0, opacity: 0, filter: "blur(10px)" }}
+        whileInView={{
+          opacity: 1,
+          filter: "blur(0px)",
+          width: "fit-content",
+          transition: { duration: 1.5, ease: "easeInOut", delay: 1.2 },
+        }}
+        transition={{ duration: 3 }}
+      />
 
-      <div className="date-wrap">
+      <motion.div
+        className="date-wrap"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3 }}
+      >
         <p className="date-title">Saturday, 27th June, 2026</p>
         <p className="time-title">12:30PM : 04:30PM</p>
-      </div>
+      </motion.div>
 
-      <hr className="gold-divide" />
+      <motion.hr
+        className="gold-divide"
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        whileInView={{
+          opacity: 1,
+          filter: "blur(0px)",
+          transition: {
+            duration: 1.2,
+            ease: [0.43, 0.13, 0.23, 0.96], // Custom cubic-bezier for "royal" smoothness
+          },
+        }}
+        transition={{ duration: 3 }}
+      />
 
       <div className="add-wrap">
         <div className="frame-content">

@@ -47,19 +47,27 @@ const InviteContent = () => {
       <motion.hr
         className="gold-divide"
         initial={{ width: 0, opacity: 0, filter: "blur(10px)" }}
-        whileInView={{
+        animate={{
           opacity: 1,
           filter: "blur(0px)",
-          width: "fit-content",
+          width: "40%",
           transition: { duration: 1.5, ease: "easeInOut", delay: 1.2 },
         }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 1.5 }}
       />
 
       <motion.div
         className="date-wrap"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ y: 20, opacity: 0, filter: "blur(10px)" }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          transition: {
+            duration: 3,
+            ease: [0.43, 0.13, 0.23, 0.96],
+          },
+        }}
         transition={{ duration: 3 }}
       >
         <p className="date-title">Saturday, 27th June, 2026</p>
@@ -68,16 +76,14 @@ const InviteContent = () => {
 
       <motion.hr
         className="gold-divide"
-        initial={{ opacity: 0, filter: "blur(10px)" }}
-        whileInView={{
+        initial={{ width: 0, opacity: 0, filter: "blur(10px)" }}
+        animate={{
           opacity: 1,
           filter: "blur(0px)",
-          transition: {
-            duration: 1.2,
-            ease: [0.43, 0.13, 0.23, 0.96], // Custom cubic-bezier for "royal" smoothness
-          },
+          width: "40%",
+          transition: { duration: 1.5, ease: "easeInOut", delay: 1.2 },
         }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 1.5 }}
       />
 
       <div className="add-wrap">

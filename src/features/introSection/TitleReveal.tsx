@@ -22,7 +22,7 @@ const RoyalWeddingReveal = () => {
       filter: "blur(0px)",
       transition: {
         duration: 1.2,
-        ease: [0.43, 0.13, 0.23, 0.96], // Custom cubic-bezier for "royal" smoothness
+        ease: [0.43, 0.13, 0.23, 0.96],
       },
     },
   };

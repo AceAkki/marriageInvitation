@@ -100,6 +100,7 @@ const InviteContent = () => {
             <a
               href="https://maps.app.goo.gl/unBYU8ysRFNPwEL69"
               className="action-btn gold-bg"
+              target="_blank"
             >
               Get Directions
             </a>
@@ -126,11 +127,9 @@ const InviteContent = () => {
       <div className="date-wrap">
         <p>
           <strong>Contact</strong> <br />
-          Rutik : 98988 87988
+          Rutik : 91 98988 87988
         </p>
       </div>
-
-      <hr className="gold-divide" />
     </div>
   );
 };

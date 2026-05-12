@@ -3,17 +3,25 @@ import * as React from "react";
 // import { addPropertyControls, ControlType } from "framer";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ProCountdown(props) {
+export default function ProCountdown(props: {
+  targetDate: Date;
+  tint: string;
+  labelColor: string;
+  fontSize: number;
+  gap: number;
+  showSeparators: boolean;
+  fontFamily: string;
+  fontWeight: number;
+}) {
   const {
     targetDate,
     tint,
-    labelColor,
     fontSize,
     gap,
     showSeparators,
     fontFamily,
     fontWeight,
-  } = props; // 1. DYNAMIC FONT LOADER
+  } = props;
   // This injects the font from Google into your page automatically
   console.log(props, fontFamily);
   React.useEffect(() => {
@@ -90,7 +98,15 @@ export default function ProCountdown(props) {
   });
 }
 
-function Separator({ fontSize, tint, fontFamily }) {
+function Separator({
+  fontSize,
+  tint,
+  fontFamily,
+}: {
+  fontSize: number;
+  tint: string;
+  fontFamily: string;
+}) {
   return /*#__PURE__*/ _jsx("div", {
     style: {
       ...separatorStyle,
@@ -101,7 +117,21 @@ function Separator({ fontSize, tint, fontFamily }) {
     children: ":",
   });
 }
-function NumberGroup({ value, label, tint, labelColor, fontSize, fontFamily }) {
+function NumberGroup({
+  value,
+  label,
+  tint,
+  labelColor,
+  fontSize,
+  fontFamily,
+}: {
+  value: number;
+  label: string;
+  tint: string;
+  labelColor: string;
+  fontSize: number;
+  fontFamily: string;
+}) {
   const digits = (value < 10 ? `0${value}` : `${value}`).split("");
   return /*#__PURE__*/ _jsxs("div", {
     style: groupContainerStyle,
@@ -132,7 +162,17 @@ function NumberGroup({ value, label, tint, labelColor, fontSize, fontFamily }) {
     ],
   });
 }
-function Digit({ value, fontSize, tint, fontFamily }) {
+function Digit({
+  value,
+  fontSize,
+  tint,
+  fontFamily,
+}: {
+  value: number;
+  fontSize: number;
+  tint: string;
+  fontFamily: string;
+}) {
   return /*#__PURE__*/ _jsx("div", {
     style: {
       position: "relative",
@@ -168,7 +208,7 @@ function Digit({ value, fontSize, tint, fontFamily }) {
     }),
   });
 }
-/* --- LOGIC --- */ const calculateTimeLeft = (targetDate) => {
+/* --- LOGIC --- */ const calculateTimeLeft = (targetDate: Date) => {
   const difference = +new Date(targetDate) - +new Date();
   if (difference > 0) {
     return {

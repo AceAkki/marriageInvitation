@@ -33,7 +33,7 @@
 }
 
 body {
-  background: url("./assets/darkBG.jpg") repeat fixed center / cover;
+  background: url("./assets/darkBG.webp") repeat fixed center / cover;
   font-family: "Cinzel Decorative";
   font-weight: 400;
   color: #f5f5dc;

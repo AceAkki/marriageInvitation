@@ -2,17 +2,17 @@ import RoyalWeddingReveal from "./TitleReveal";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
 import { FlyingFlower, SwayFlower } from "./useFlowerAnimation";
 
-import FlowerImg from "../../assets/flower.png";
-import FlowerImg1 from "../../assets/flower1.png";
-import FlowerImg2 from "../../assets/flower2.png";
-import FlowerImg3 from "../../assets/flower3.png";
-import FlowerImg4 from "../../assets/flower4.png";
-import FlowerImg5 from "../../assets/flower5.png";
-import FlowerImg6 from "../../assets/flower6.png";
-import FlowerImg7 from "../../assets/flower7.png";
-import FlowerImg8 from "../../assets/flower8.png";
-import FlowerImg9 from "../../assets/flower9.png";
-import leafImg from "../../assets/leaf.png";
+import FlowerImg from "../../assets/flower.webp";
+import FlowerImg1 from "../../assets/flower1.webp";
+import FlowerImg2 from "../../assets/flower2.webp";
+import FlowerImg3 from "../../assets/flower3.webp";
+import FlowerImg4 from "../../assets/flower4.webp";
+import FlowerImg5 from "../../assets/flower5.webp";
+import FlowerImg6 from "../../assets/flower6.webp";
+import FlowerImg7 from "../../assets/flower7.webp";
+import FlowerImg8 from "../../assets/flower8.webp";
+import FlowerImg9 from "../../assets/flower9.webp";
+import leafImg from "../../assets/leaf.webp";
 
 export default function IntroFlowers() {
   const { width, height } = useResponsiveValues();

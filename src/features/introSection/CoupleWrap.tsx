@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import ArchBG from "../../assets/rose-arc.png";
+import ArchBG from "../../assets/rose-arc.webp";
 
 export default function CoupleWrap() {
   const containerVariants: Variants = {

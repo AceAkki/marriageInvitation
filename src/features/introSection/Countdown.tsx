@@ -1,6 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from "react";
-// import { addPropertyControls, ControlType } from "framer";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProCountdown(props: {

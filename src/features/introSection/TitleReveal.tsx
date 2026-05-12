@@ -19,7 +19,7 @@ const RoyalWeddingReveal = () => {
     visible: {
       y: 0,
       opacity: 1,
-      filter: "blur(0px)",
+      filter: "blur(0px) none",
       transition: {
         duration: 1.2,
         ease: [0.43, 0.13, 0.23, 0.96],

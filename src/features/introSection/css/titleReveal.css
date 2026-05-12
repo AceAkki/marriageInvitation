@@ -27,8 +27,8 @@
   letter-spacing: 4px;
   text-transform: uppercase;
   font-weight: 600;
-  position: relative;
-  z-index: 5;
+  /* position: relative;
+  z-index: 5; */
 }
 
 .title-ampersand {

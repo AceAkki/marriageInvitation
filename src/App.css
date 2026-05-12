@@ -100,8 +100,8 @@
 .name-title {
   font-family: "Feeling Passionate";
   font-size: 5rem;
-  line-height: 5rem;
-  margin: 1rem;
+  /* line-height: 5rem;
+  margin: 1rem; */
 }
 
 .name-sub-title {

@@ -17,11 +17,10 @@ const RoyalWeddingReveal = () => {
   // filer blur issue on chrome
 
   const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0, filter: "blur(10px)" },
+    hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      filter: "blur(0px)",
       transition: {
         duration: 1.2,
         ease: [0.43, 0.13, 0.23, 0.96],

@@ -164,12 +164,10 @@ function NumberGroup({
 function Digit({
   value,
   fontSize,
-  tint,
   fontFamily,
 }: {
   value: number;
   fontSize: number;
-  tint: string;
   fontFamily: string;
 }) {
   return /*#__PURE__*/ _jsx("div", {

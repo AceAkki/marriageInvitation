@@ -17,10 +17,11 @@ const RoyalWeddingReveal = () => {
   // filer blur issue on chrome
 
   const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 20, opacity: 0, filter: "blur(10px)" },
     visible: {
       y: 0,
       opacity: 1,
+      filter: "blur(0px)",
       transition: {
         duration: 1.2,
         ease: [0.43, 0.13, 0.23, 0.96],
@@ -47,7 +48,7 @@ const RoyalWeddingReveal = () => {
         {/* Top Decorative Line */}
         <motion.div variants={lineVariants} className="title-line gold-bg" />
 
-        <div className="text-group gold-text">
+        <div className="text-group">
           <motion.h1 variants={itemVariants} className="title-name">
             Akshay
           </motion.h1>

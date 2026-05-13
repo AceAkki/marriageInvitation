@@ -181,7 +181,7 @@ function Digit({
       display: "flex",
       justifyContent: "center",
     },
-    class: "gold-text",
+    // class: "gold-text",
     children: /*#__PURE__*/ _jsx(AnimatePresence, {
       mode: "popLayout",
       initial: false,

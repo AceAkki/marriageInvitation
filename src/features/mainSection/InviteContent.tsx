@@ -113,7 +113,7 @@ const InviteContent = () => {
           targetDate={newDate}
           tint="#FFFFFF"
           labelColor="#888888"
-          fontSize={isMobile ? 25 : 60}
+          fontSize={isMobile ? 40 : 60}
           gap={isMobile ? 10 : 30}
           showSeparators={false}
           fontFamily="Inter"

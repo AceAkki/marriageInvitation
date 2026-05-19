@@ -1,3 +1,7 @@
+import { useRef, useEffect } from "react";
+import { useShallow } from "zustand/react/shallow";
+import { useGlobalStore } from "../../hooks/useGlobalStore";
+
 import RoyalWeddingReveal from "./TitleReveal";
 import useResponsiveValues from "../../hooks/useResponsiveValues";
 import { FlyingFlower, SwayFlower } from "./useFlowerAnimation";
@@ -18,8 +22,40 @@ export default function IntroFlowers() {
   const { width, height } = useResponsiveValues();
   let isMobile = width < 1080;
   let isDesktop = width > 1080;
+
+  const swayFlowerRef = useRef(null);
+  const { imgStatus, setImgStatus } = useGlobalStore(
+    useShallow((state) => ({
+      imgStatus: state.imgStatus,
+      setImgStatus: state.setImgStatus,
+    })),
+  );
+
+  useEffect(() => {
+    if (swayFlowerRef.current !== null) {
+      console.log(swayFlowerRef.current);
+      Promise.all(
+        Array.from(swayFlowerRef.current.querySelectorAll("img")).map((img) => {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              if (img.complete) {
+                resolve(true);
+              } else {
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+              }
+            }, 10000);
+          });
+        }),
+      ).then((values) => {
+        console.log(values);
+        !values.includes(false) ? setImgStatus(true) : setImgStatus(false);
+      });
+    }
+  }, [swayFlowerRef]);
   return (
-    <div>
+    <>
+      <section>{!imgStatus && <div> Waiting </div>}</section>
       <section
         style={{
           position: "relative",
@@ -28,6 +64,7 @@ export default function IntroFlowers() {
           alignItems: "center",
 
           overflowX: "hidden",
+          visibility: imgStatus ? "visible" : "hidden",
         }}
       >
         {/* --- EXISTING GROUPS (Top & Mid-Top) --- */}
@@ -153,6 +190,7 @@ export default function IntroFlowers() {
           position: "relative",
           display: "flex",
           justifyContent: "center",
+          visibility: imgStatus ? "visible" : "hidden",
         }}
       >
         {/* --- Section 1: Far Left (0% - 20%) --- */}
@@ -209,6 +247,6 @@ export default function IntroFlowers() {
         <FlyingFlower src={FlowerImg1} xPos="96%" speed={-1200} />
         <FlyingFlower src={FlowerImg6} xPos="98.5%" speed={-990} /> */}
       </div>
-    </div>
+    </>
   );
 }

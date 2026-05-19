@@ -22,7 +22,7 @@ export default function ProCountdown(props: {
     fontWeight,
   } = props;
   // This injects the font from Google into your page automatically
-  console.log(props, fontFamily);
+  // console.log(props, fontFamily);
   React.useEffect(() => {
     if (!fontFamily) return;
     const linkId = `font-${fontFamily.replace(/\s+/g, "-")}`;

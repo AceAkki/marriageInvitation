@@ -32,8 +32,8 @@ export default function IntroFlowers() {
   );
 
   useEffect(() => {
+    console.log(swayFlowerRef.current);
     if (swayFlowerRef.current !== null) {
-      console.log(swayFlowerRef.current);
       const container: React.RefObject<HTMLDivElement> = swayFlowerRef.current;
       Promise.all(
         Array.from(container.querySelectorAll("img")).map(
@@ -46,7 +46,7 @@ export default function IntroFlowers() {
                   img.onload = () => resolve(true);
                   img.onerror = () => resolve(false);
                 }
-              }, 10000);
+              }, 2000);
             });
           },
         ),
@@ -55,7 +55,7 @@ export default function IntroFlowers() {
         !values.includes(false) ? setImgStatus(true) : setImgStatus(false);
       });
     }
-  }, [swayFlowerRef]);
+  }, [swayFlowerRef, imgStatus]);
   return (
     <>
       <section>{!imgStatus && <div> Waiting </div>}</section>

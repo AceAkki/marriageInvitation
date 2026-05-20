@@ -12,12 +12,19 @@ import "./App.css";
 
 function App() {
   const lenisRef = useRef<LenisRef>(null);
+  let bufferRef = useRef<HTMLDivElement | null>(null);
+  const mainRef = useRef<HTMLDivElement | null>(null);
 
   const { imgStatus } = useGlobalStore(
     useShallow((state) => ({
       imgStatus: state.imgStatus,
     })),
   );
+
+  const handleScroll = () => {
+    mainRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    bufferRef.current?.remove();
+  };
 
   useEffect(() => {
     function update(data: { timestamp: number }) {
@@ -31,8 +38,21 @@ function App() {
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <main>
-        {!imgStatus && <section> Waiting </section>}
         <section>
+          {
+            <div>
+              <p>
+                Dear [Guest Name], You've been an important part of our journey,
+                and we'd be honored to have you witness our union and celebrate
+                this joyful new chapter with us.
+              </p>
+              <button onClick={handleScroll} disabled={!imgStatus}>
+                View Invitation
+              </button>
+            </div>
+          }
+        </section>
+        <section ref={mainRef}>
           <IntroFlowers />
         </section>
         <section style={{ paddingTop: "20vh" }}>
